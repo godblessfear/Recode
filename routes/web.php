@@ -19,6 +19,8 @@ use Illuminate\Http\Request;
 
 Route::get('/', '\App\Http\Controllers\NewsController@indexxx') -> name ('index');
 
+Route::get('/{name}', '\App\Http\Controllers\NewsController@author_index') -> name ('author_index');
+
 Route::get('/books', '\App\Http\Controllers\NewsController@addbook') -> name('addbook');
 
 Route::get('/books/delete/{id}', '\App\Http\Controllers\NewsController@delete_book') -> name('delete_book');

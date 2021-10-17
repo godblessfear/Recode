@@ -19,12 +19,11 @@
 <form method="POST" action="/books/update/{{$book->id}}" id='forms' name='forms'>
 {{ csrf_field() }}
 <input type="hidden" id="id" name="id" value="{{ $book->id }}">
-    <p>Название книги</p>
-    
+    <p>Название книги</p>    
     <input type="text" name="name" id='name' class="form-control" value='{{ $book -> name }}'><br>
     <p>Автор</p>
 	<select class="form-select" aria-label="Default select example" name='author' id='author' value='{{ $book-> author }}'>
-	    @foreach (App\author::all() as $author)
+	    @foreach (App\Authors::all() as $author)
 	    @if($author->name == $book->author)
 	    {
 	        <option selected value='{{$author->name}}' id='{{$author->id}}'>{{$author->name}}</option>
